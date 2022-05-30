@@ -1,33 +1,9 @@
-import { Flex, Image, Box, Center, Button } from "@chakra-ui/react";
+import { Flex, Image, Button, useBreakpointValue } from "@chakra-ui/react";
 import { useCallback } from "react";
-import { isTablet, isMobile, isDesktop } from "react-device-detect";
 
 type Dimensions = {
 	width: string;
 	height: string;
-};
-
-const getLogoUri = (): string => {
-	return isDesktop ? "./workpals-logo.png" : "./wp-icon.png";
-};
-
-const getLogoDimensions = (): Dimensions => {
-	if (isMobile) {
-		return {
-			width: "40px",
-			height: "40px",
-		};
-	} else if (isTablet) {
-		return {
-			width: "90px",
-			height: "85px",
-		};
-	} else {
-		return {
-			width: "260px",
-			height: "76px",
-		};
-	}
 };
 
 const SocialMediaIcon = ({
@@ -53,8 +29,24 @@ const SocialMediaIcon = ({
 };
 
 const Navbar = () => {
-	const dimensions = getLogoDimensions();
-	const logoUri = getLogoUri();
+	const logoUri = useBreakpointValue({
+		base: "./wp-icon.png",
+		lg: "./workpals-logo.png",
+	});
+	const dimensions = useBreakpointValue({
+		base: {
+			width: "40px",
+			height: "40px",
+		},
+		md: {
+			width: "90px",
+			height: "85px",
+		},
+		lg: {
+			width: "260px",
+			height: "76px",
+		},
+	});
 
 	const handleTwitterClick = useCallback(() => {
 		window.open("https://twitter.com/WorkpalsNFT", "_blank");
@@ -67,8 +59,8 @@ const Navbar = () => {
 			<Image
 				src={logoUri}
 				alt="WorkPals Icon"
-				width={dimensions.width}
-				height={dimensions.height}
+				width={dimensions?.width}
+				height={dimensions?.height}
 			/>
 			<Flex gap="0.75rem">
 				<SocialMediaIcon

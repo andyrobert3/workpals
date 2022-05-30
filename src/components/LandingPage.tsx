@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Heading, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Heading, Tooltip } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback } from "react";
@@ -66,6 +66,26 @@ const WorkPalsLogo = () => {
 	);
 };
 
+const MetadataHead = () => {
+	return (
+		<Head>
+			<title>WorkPals NFT</title>
+			<meta name="keywords" content="NFT, Career, Mental Health, Community" />
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<meta property="og:title" content="WorkPals NFT" />
+			<meta
+				property="og:description"
+				content="Your go-to NFT community for all things related to 💼 Career Development & ✨ Mental Health at work"
+			/>
+			<meta name="twitter:title" content="WorkPals NFT" />
+			<meta
+				name="twitter:description"
+				content="Your go-to NFT community for all things related to 💼 Career Development & ✨ Mental Health at work"
+			/>
+		</Head>
+	);
+};
+
 const LandingPage: NextPage = () => {
 	return (
 		<Flex
@@ -76,9 +96,7 @@ const LandingPage: NextPage = () => {
 			overflowY="hidden"
 			paddingX={{ base: "24px", md: "36px", lg: "56px" }}
 		>
-			<Head>
-				<title>WorkPals NFT</title>
-			</Head>
+			<MetadataHead />
 			<Navbar />
 			<Flex flexDir={{ base: "column", md: "column-reverse" }}>
 				<WorkPalsLogo />
