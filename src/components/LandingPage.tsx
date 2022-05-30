@@ -1,20 +1,10 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Heading, VStack } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback } from "react";
-
-const Navbar = () => {
-	return (
-		<Flex paddingY="8px" marginTop="24px" justifyContent="space-between">
-			<Image src="./wp-icon.png" alt="WorkPals Icon" width="40px" />
-			<Box>Menu Box</Box>
-		</Flex>
-	);
-};
+import Navbar from "./shared/Navbar";
 
 const Home: NextPage = () => {
-	const handleJoinDiscord = useCallback(() => {}, []);
-
 	const handleFollowUs = useCallback(() => {
 		window.open(
 			"https://twitter.com/intent/follow?screen_name=WorkpalsNFT",
@@ -34,36 +24,37 @@ const Home: NextPage = () => {
 				<title>WorkPals NFT</title>
 			</Head>
 			<Navbar />
-			<Flex
-				flexDir="column"
-				justifyContent="center"
-				alignItems="center"
-				marginBottom="16px"
-				marginTop="20px"
-			>
-				<Image maxW="80%" src="/workpals-logo.png" alt="Workpals Icon" />
-			</Flex>
-			<Button backgroundColor="#2D151E" height="50px" isDisabled={true}>
-				Join Discord
-			</Button>
-			<Button
-				backgroundColor="#CCCCCC"
-				textColor="black"
-				borderColor="#2D151E"
-				borderWidth={3}
-				marginTop="12px"
-				height="50px"
-				onClick={handleFollowUs}
-			>
-				Follow Us
-			</Button>
 			<Image
 				src="/silhouette.png"
-				marginTop="54px"
+				marginTop="3.5rem"
+				marginBottom="5rem"
 				width="100%"
 				alt="art sneak-peek"
 				alignSelf="center"
 			/>
+			<Flex flexDir="column" flex={1} width="100%">
+				<Heading textTransform="uppercase" textAlign="center" mb="2rem">
+					Coming Soon.
+				</Heading>
+				<Button
+					backgroundColor="#2D151E"
+					height="50px"
+					isDisabled={true}
+					mb="1rem"
+				>
+					Join Discord
+				</Button>
+				<Button
+					backgroundColor="#CCCCCC"
+					textColor="black"
+					borderColor="#2D151E"
+					borderWidth={3}
+					height="50px"
+					onClick={handleFollowUs}
+				>
+					Follow Us
+				</Button>
+			</Flex>
 		</Flex>
 	);
 };
