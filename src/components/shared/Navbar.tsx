@@ -9,7 +9,6 @@ const Navbar = () => {
 				width="48px"
 				height="40px"
 			/>
-			<Box>Menu Box</Box>
 		</Flex>
 	);
 };

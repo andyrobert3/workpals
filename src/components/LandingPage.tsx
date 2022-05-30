@@ -33,11 +33,16 @@ const Home: NextPage = () => {
 				alignSelf="center"
 			/>
 			<Flex flexDir="column" flex={1} width="100%">
-				<Heading textTransform="uppercase" textAlign="center" mb="2rem">
+				<Heading
+					textTransform="uppercase"
+					textAlign="center"
+					mb="2rem"
+					color="primary"
+				>
 					Coming Soon.
 				</Heading>
 				<Button
-					backgroundColor="#2D151E"
+					backgroundColor="primary"
 					height="50px"
 					isDisabled={true}
 					mb="1rem"
@@ -46,8 +51,8 @@ const Home: NextPage = () => {
 				</Button>
 				<Button
 					backgroundColor="#CCCCCC"
-					textColor="black"
-					borderColor="#2D151E"
+					textColor="primary"
+					borderColor="primary"
 					borderWidth={3}
 					height="50px"
 					onClick={handleFollowUs}
