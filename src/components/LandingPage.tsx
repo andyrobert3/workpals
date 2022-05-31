@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image, Heading, Tooltip } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, Heading, Text } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback } from "react";
@@ -13,7 +13,7 @@ const CallToActionSection = () => {
 	}, []);
 
 	return (
-		<Flex flexDir="column" flex={1} width="100%">
+		<Flex flexDir="column" flex={1} width="100%" alignItems="center">
 			<Heading
 				textTransform="uppercase"
 				textAlign="center"
@@ -22,20 +22,21 @@ const CallToActionSection = () => {
 			>
 				Coming Soon.
 			</Heading>
+			<Text
+				maxW={{ base: undefined, md: "450px" }}
+				color="black"
+				mb="16px"
+				textAlign="center"
+			>
+				WorkPals is a decentralized NFT community, where the community helps
+				each other in Career Development &amp; Mental Health at the workplace.
+			</Text>
 			<Flex
 				flexDir={{ base: "column", md: "row" }}
 				justifyContent="center"
 				width="100%"
 				gap={{ base: "1rem", md: "2rem" }}
 			>
-				<Button
-					backgroundColor="primary"
-					height="50px"
-					isDisabled={true}
-					minW="200px"
-				>
-					Join Discord
-				</Button>
 				<Button
 					backgroundColor="#CCCCCC"
 					textColor="primary"
@@ -46,6 +47,15 @@ const CallToActionSection = () => {
 					onClick={handleFollowUs}
 				>
 					Follow Us
+				</Button>
+				<Button
+					backgroundColor="primary"
+					height="50px"
+					isDisabled={true}
+					minW="200px"
+					mb="24px"
+				>
+					Join Discord
 				</Button>
 			</Flex>
 		</Flex>
