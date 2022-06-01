@@ -28,8 +28,8 @@ const CallToActionSection = () => {
 				mb="16px"
 				textAlign="center"
 			>
-				WorkPals is a decentralized NFT community, where the community helps
-				each other in Career Development &amp; Mental Health at the workplace.
+				WorkPals is a decentralized NFT community, where the pals help
+				each other in their Career Development &amp; Mental Health at the workplace.
 			</Text>
 			<Flex
 				flexDir={{ base: "column", md: "row" }}
