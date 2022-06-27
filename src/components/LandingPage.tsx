@@ -18,19 +18,22 @@ const CallToActionSection = () => {
 				textTransform="uppercase"
 				textAlign="center"
 				mb="2rem"
+				noOfLines={2}
+				maxW="300px"
 				color="primary"
 			>
-				Coming Soon.
+				FREE MINT COMING SOON
 			</Heading>
 			<Text
-				maxW={{ base: undefined, md: "450px" }}
+				maxW={{ base: undefined, md: "475px" }}
 				color="black"
 				mb="16px"
 				textAlign="center"
 			>
-				1st NFT project that allows you to get shit done. Stay productive and
-				accountable with your new work buddies, anytime and anywhere. FREE MINT
-				COMING SOON ✨
+				1st NFT project that allows you{" "}
+				<span style={{ fontWeight: "bold" }}>to get shit done</span>. Stay
+				productive and accountable with your new work buddies, anytime and
+				anywhere. ✨
 			</Text>
 			<Flex
 				flexDir={{ base: "column", md: "row" }}
