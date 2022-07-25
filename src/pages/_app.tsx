@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
 import { extendTheme } from "@chakra-ui/react";
 import "@fontsource/dm-mono";
+import Script from "next/script";
 
 const theme = extendTheme({
 	fonts: {
@@ -17,6 +18,18 @@ const theme = extendTheme({
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<ChakraProvider theme={theme}>
+			{/* Global site tag (gtag.js) - Google Analytics */}
+			<Script
+				async
+				src="https://www.googletagmanager.com/gtag/js?id=G-V8KCVEWENM"
+			/>
+			<Script id="google-analytics">
+				{`window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+						gtag('js', new Date());
+					
+						gtag('config', 'G-V8KCVEWENM');`}
+			</Script>
 			<Component {...pageProps} />
 		</ChakraProvider>
 	);
