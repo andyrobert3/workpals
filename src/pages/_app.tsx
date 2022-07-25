@@ -24,13 +24,11 @@ function MyApp({ Component, pageProps }: AppProps) {
 				strategy="afterInteractive"
 			></Script>
 			<Script id="google-analytics" strategy="afterInteractive">
-				{`		
-					window.dataLayer = window.dataLayer || [];
+				{`window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
 					gtag('js', new Date());
 
-					gtag('config', 'G-V8KCVEWENM');
-				`}
+					gtag('config', 'G-V8KCVEWENM');`}
 			</Script>
 			<Component {...pageProps} />
 		</ChakraProvider>
