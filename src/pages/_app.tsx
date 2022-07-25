@@ -20,15 +20,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 		<ChakraProvider theme={theme}>
 			{/* Global site tag (gtag.js) - Google Analytics */}
 			<Script
-				async
 				src="https://www.googletagmanager.com/gtag/js?id=G-V8KCVEWENM"
-			/>
-			<Script id="google-analytics">
-				{`window.dataLayer = window.dataLayer || [];
+				strategy="afterInteractive"
+			></Script>
+			<Script id="google-analytics" strategy="afterInteractive">
+				{`		
+					window.dataLayer = window.dataLayer || [];
 					function gtag(){dataLayer.push(arguments);}
-						gtag('js', new Date());
-					
-						gtag('config', 'G-V8KCVEWENM');`}
+					gtag('js', new Date());
+
+					gtag('config', 'G-V8KCVEWENM');
+				`}
 			</Script>
 			<Component {...pageProps} />
 		</ChakraProvider>
