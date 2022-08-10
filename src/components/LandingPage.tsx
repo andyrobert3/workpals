@@ -84,16 +84,16 @@ const WorkPalsLogo = () => {
 			alignItems="center"
 		>
 			<Box width={{ base: "80%", md: "33.5%" }}>
-				<Image src="/owl.png" alt="owl" />
+				<Image src="./reveal/owl.png" alt="owl" />
 			</Box>
 			<Box width={{ base: "80%", md: "27.5%" }}>
-				<Image src="/tiger.png" alt="tiger" />
+				<Image src="./reveal/tiger.png" alt="tiger" />
 			</Box>
 			<Box width={{ base: "80%", md: "22.5%" }}>
-				<Image src="/rabbit.png" alt="rabbit" />
+				<Image src="./reveal/rabbit.png" alt="rabbit" />
 			</Box>
 			<Box width={{ base: "80%", md: "21.5%" }}>
-				<Image src="/dog.png" alt="dog" />
+				<Image src="./reveal/dog.png" alt="dog" />
 			</Box>
 		</Stack>
 	);
