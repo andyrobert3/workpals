@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Image, Heading, Text } from "@chakra-ui/react";
+import {
+	Box,
+	Button,
+	Flex,
+	Image,
+	Heading,
+	Text,
+	Stack,
+} from "@chakra-ui/react";
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useCallback } from "react";
@@ -68,15 +76,26 @@ const CallToActionSection = () => {
 
 const WorkPalsLogo = () => {
 	return (
-		<Image
-			src="/silhouette.png"
-			marginTop="3.5rem"
-			marginBottom="5rem"
-			width="100%"
-			maxW="900px"
-			alt="art sneak-peek"
-			alignSelf="center"
-		/>
+		<Stack
+			flexDir={{ base: "column", md: "row" }}
+			flex={1}
+			maxW="1000px"
+			spacing={"16px"}
+			alignItems="center"
+		>
+			<Box width={{ base: "80%", md: "33.5%" }}>
+				<Image src="/OWL.png" alt="owl" />
+			</Box>
+			<Box width={{ base: "80%", md: "27.5%" }}>
+				<Image src="/TIGER.png" alt="tiger" />
+			</Box>
+			<Box width={{ base: "80%", md: "22.5%" }}>
+				<Image src="/RABBIT.png" alt="rabbit" />
+			</Box>
+			<Box width={{ base: "80%", md: "21.5%" }}>
+				<Image src="/DOG.png" alt="dog" />
+			</Box>
+		</Stack>
 	);
 };
 
@@ -112,9 +131,9 @@ const LandingPage: NextPage = () => {
 		>
 			<MetadataHead />
 			<Navbar />
-			<Flex flexDir={{ base: "column", md: "column-reverse" }}>
-				<WorkPalsLogo />
+			<Flex flexDir={{ base: "column" }} alignItems="center">
 				<CallToActionSection />
+				<WorkPalsLogo />
 			</Flex>
 		</Flex>
 	);
